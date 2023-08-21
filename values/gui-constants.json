@@ -1,0 +1,20 @@
+{
+    "QUARTER_WIDTH": 480,
+    "NOTE_HEIGHT": 20,
+    "SCALE_FACTOR": 3.5,
+    "TRACKS_SCALE_FACTOR": 6,
+    "TRACK_WIDTH": 0,
+    "PITCH_SCALE": 24,
+    "SMOOTHNESS_IN": 30,
+    "SMOOTHNESS_OUT": 30,
+    "PLAYER_STATUS": "STOP",
+    "COLORS": {
+        "PRIMARY": "#d17b91",
+        "PRIMARY1": "#17B051",
+        "PRIMARY2": "#1379D8",
+        "PRIMARY3": "#E45C0C",
+        "PRIMARY4": "#F1AB0E",
+        "PRIMARY5": "#F24FAB",
+        "PRIMARY6": "#902CF4"
+    }
+}
