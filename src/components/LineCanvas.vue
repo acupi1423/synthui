@@ -78,6 +78,8 @@
                             this.basePitch[ (CurrentNote.tickOff - smoothnessOut) + i] = anchor - (((center + keyCenter) - (keyCenter * (i / smoothnessOut))) * GUI_CONSTANTS.NOTE_HEIGHT);
                         }
                     }
+
+                    this.drawLine();
                 },
         },
         mounted(){
@@ -87,7 +89,7 @@
 
             this.ctx = canvas.getContext("2d");
 
-            this.parseBase().then(()=>{this.drawLine()});
+            this.parseBase();
             
         },
         

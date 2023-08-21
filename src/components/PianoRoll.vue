@@ -4,7 +4,7 @@
             <PianoKeys />
         </div>
         <div class="grid" v-bind:class="mode.toLowerCase() + '-mode'">
-            <div class="signature">
+            <div class="signature" v-on:click="changeMarkerPos">
                 <div class="tick"></div>
                 <div class="tick"></div>
                 <template v-for="tick in ticks">
@@ -63,6 +63,8 @@
                 <LineCanvas :baseNotes="track.notes" :strokeWidth="2" :color="mainColor" :parameter="track.pitch"/>
             </div>
         </div>
+
+        <div class="playback-marker" :style="{'height': (100 + (120 * noteHeight)) + 'px', 'left': markerPos + 'px'}"></div>
     </div>
 </template>
 
@@ -109,6 +111,8 @@
     display: flex;
     z-index: 101;
     /* backdrop-filter: blur(4px); */
+
+    cursor: pointer;
 }
 .grid .signature .tick{
     width: var(--note-width);
@@ -118,6 +122,7 @@
     align-items: center;
     font-size: .85em;
     border-left: 1px solid var(--background-lighter);
+    pointer-events: none;
 }
 
 .absolute{
@@ -140,8 +145,10 @@
     width: 100%;
     height: 100%;
 
+    --color-text: #000;
     --display-phonemes: block;
     --lyrics-index: 100;
+    --cursor: pointer;
 }
 
 
@@ -149,6 +156,7 @@
     width: 100%;
     height: 100%;
     z-index: 10;
+    pointer-events: none;
 }
 
 .scroll{
@@ -163,7 +171,10 @@
     --background: var(--background-lighter);
     --color-text: #fffa;
     --display-phonemes: none;
+    --cursor: unset;
     --lyrics-index: 1;
+
+    cursor:crosshair;
 }
 </style>
 <script>
@@ -183,9 +194,13 @@ export default {
             pianoRollWidth: GUI_CONSTANTS.TRACK_WIDTH,
             mainColor: GUI_CONSTANTS.COLORS.PRIMARY,
             ticks:  Array.from({ length: (GUI_CONSTANTS.TRACK_WIDTH / (GUI_CONSTANTS.QUARTER_WIDTH / GUI_CONSTANTS.SCALE_FACTOR)) }, (value, index) => index),
+            markerPos: 530,
         }
     },
-    methods(){
+    methods: {
+        changeMarkerPos: function(ev){
+            this.markerPos = document.querySelector(".piano-roll-panel .scroll").scrollLeft + ev.x;
+        }
     },
     onBeforeMount() {
     },

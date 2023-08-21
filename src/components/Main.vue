@@ -24,12 +24,21 @@
                     </div>
                     <div class="wrap">
                         <Player />
+                        <div class="panel">
+                            
+                            <div class="text">Tempo</div>
+                            <input type="text" class="form-control text-center" :value="tempo?.bpm" placeholder="120">
+                            <!-- <div class="text">Pos</div> -->
+                            <input type="text" class="form-control text-center" placeholder="4/4">
+                        </div>
                     </div>
                     <div class="wrap">
                         <!-- <Tools /> -->
-                        <div class="panel">
-                            <button class="button" :class="{active: pianoMode == 'NOTES'}" v-on:click="pianoMode = 'NOTES'">NOTES</button>
-                            <button class="button" :class="{active: pianoMode == 'PITCH'}" v-on:click="pianoMode = 'PITCH'">PITCH</button>
+                        <!-- <div class="panel" ></div> -->
+                        <span style="width: 200px;"></span>
+                        <div class="panel btn-group">
+                            <button class="button" :class="{active: pianoMode == 'NOTES'}" v-on:click="pianoMode = 'NOTES'">Notes</button>
+                            <button class="button" :class="{active: pianoMode == 'PITCH'}" v-on:click="pianoMode = 'PITCH'">Pitch</button>
                         </div>
                     </div>
                 </div>
@@ -130,14 +139,16 @@
         justify-content: space-around;
         background-color: var(--background);
     }
-
+    .toolbar .panel button{
+        width: auto;
+        flex: 1;
+    }
     .toolbar .panel .text{
         padding: 0 10px;
         font-size: .85em;
         opacity: .7;
         height: 100%;
         line-height: 22px;
-        border-right: 1px solid var(--background-darker);
     }
     .toolbar .panel .form-control{
         padding: 4px 8px;
@@ -146,6 +157,10 @@
         font-weight: 500;
         font-size: 1em;
         line-height: 14px;
+        border-left: 1px solid var(--background-darker);
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
     .toolbar .panel .form-control:not(input){cursor: pointer;}
 
@@ -191,6 +206,7 @@
                 pianoRollMinHeight: 0,
                 pianoRollHeight: window.innerHeight - this.trackManagerHeight,
                 selectedTrack: 0,
+                tempo: projectData.project.tempos,
                 tracks: projectData.project.tracks,
                 pianoMode: 'NOTES',
             }

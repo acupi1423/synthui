@@ -14,6 +14,8 @@
         border: 1px solid var(--background);
         display: flex;
         padding: 0 6px;
+        
+        cursor: var(--cursor);
     }
 
     .note span{
@@ -24,7 +26,8 @@
     .note .lyric{color: var(--color-text); }
     .note .phoneme{
         display: var(--display-phonemes);
-        color: var(--background-darker);
+        color: var(--primary);
+        filter: brightness(.6);
         margin-left: 6px;
     }
 

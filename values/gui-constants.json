@@ -9,12 +9,12 @@
     "SMOOTHNESS_OUT": 30,
     "PLAYER_STATUS": "STOP",
     "COLORS": {
-        "PRIMARY": "#d17b91",
-        "PRIMARY1": "#17B051",
-        "PRIMARY2": "#1379D8",
-        "PRIMARY3": "#E45C0C",
-        "PRIMARY4": "#F1AB0E",
-        "PRIMARY5": "#F24FAB",
-        "PRIMARY6": "#902CF4"
+        "PRIMARY": "#e49b0f",
+        "PRIMARY2": "#17B051",
+        "PRIMARY3": "#1379D8",
+        "PRIMARY4": "#E45C0C",
+        "PRIMARY5": "#F1AB0E",
+        "PRIMARY6": "#F24FAB",
+        "PRIMARY7": "#902CF4"
     }
 }

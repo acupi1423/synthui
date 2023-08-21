@@ -1,5 +1,4 @@
 <template>
-    
     <div class="panel">
             <span v-on:click="changeState('PLAY')"><i class="gg-play-button" :class="{'active': status == 'PLAY'}"></i></span>
             <span v-on:click="changeState('PAUSE')"><i class="gg-play-pause" :class="{'active': status == 'PAUSE'}"></i></span>

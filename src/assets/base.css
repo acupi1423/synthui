@@ -1,6 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --color-text: #000;
+  --color-text: #fff;
 
   --background: #242628;
   --background-light: #343638;
@@ -17,14 +17,26 @@
   --primary: #902CF4; */
 
   --live: #f24f6a;
-  
 }
 
+
+.light-theme{
+  
+  --color-text: #000;
+
+  --background: #e3e4e6;
+  --background-light: #e9ebf0;
+  --background-lighter: #fff;
+  --background-dark: #d2d7e0;
+  --background-darker: #b8bec9;
+  --background-transparent: #e3e4e6cc;
+}
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: #fff;
   }
-}
+} */
 
 *,
 *::before,
@@ -47,3 +59,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.text-center{text-align: center;}

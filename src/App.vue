@@ -14,6 +14,7 @@
     height: 100vh;
     display: flex;
     background-color: var(--vt-c-indigo);
+    user-select: none;
   }
 
   * ::-webkit-scrollbar{

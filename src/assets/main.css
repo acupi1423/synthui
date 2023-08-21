@@ -57,3 +57,18 @@
 .button.active{
   background-color: var(--primary);
 }
+
+.btn-group button:first-child{border-top-right-radius: 0; border-bottom-right-radius: 0;}
+.btn-group button:last-child{border-top-left-radius: 0; border-bottom-left-radius: 0;}
+
+.playback-marker{
+  width: 1px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--live);
+  z-index: 101;
+  pointer-events: none;
+}
