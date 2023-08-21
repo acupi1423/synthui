@@ -49,7 +49,6 @@
     .tracks-wrapper{
         width: fit-content;
         display: flex;
-        background-image: url(track_background);
     }
     .track{
         width: auto;

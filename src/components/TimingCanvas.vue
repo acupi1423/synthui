@@ -1,11 +1,11 @@
 <template>
-    <div class="panel-wrapper" :style="{ 'width': pianoRollWidth + 'px' }">
+    <div class="panel-wrapper" :style="{ 'width': (pianoRollWidth + (offset * 2) + 50) + 'px' }">
         <div class="wave absolute" :style="{ 'padding-left': (50 + offset) + 'px' }">
-                <svg  id="waveform" height="100" :width="pianoRollWidth + 'px'">
+                <svg  id="waveform" height="100" :width="(pianoRollWidth + offset) + 'px'">
             <path stroke="currentColor"></path>
         </svg>
         </div>
-        <div class="labels absolute">
+        <div class="labels absolute" :style="{ 'width': (pianoRollWidth + (offset * 2) + 50) + 'px' }">
             <template v-for="note of baseNotes">
                 <div class="label" :style="{ 'left': 50 + (offset + (note.tickOn / scale)) + 'px', 'width': ((note.tickOff - note.tickOn) / scale) + 'px' }">
                     <span class="text-overflow">{{ note.phoneme }}</span></div>
@@ -17,7 +17,6 @@
 <style scoped>
 .panel-wrapper {
     height: 100px;
-    background-color: var(--background-transparent);
 }
 .absolute{
     position: absolute;
@@ -28,6 +27,7 @@
 
 .labels {
     height: 100%;
+    background-color: var(--background-transparent);
 }
 
 .wave {
@@ -95,7 +95,7 @@ export default {
     }
     },
     mounted() {
-        this.AudioPath("/mounai_melody.wav");
+        this.AudioPath("mounai_melody.wav");
     },
 
 }
